@@ -1,0 +1,29 @@
+Yamal file
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: abhik8
+  labels:
+    app: abhi-app
+spec:
+  containers:
+    - name: c1
+      image: abhinagare/abhi-new-repo:v1
+      ports:
+       - containerPort: 80
+
+Service yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-23
+spec:
+  selector:
+    app: abhi-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort
