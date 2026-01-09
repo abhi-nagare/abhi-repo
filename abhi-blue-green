@@ -20,6 +20,7 @@ spec:
         image: siddhi2054/cdec-b2:v3
         ports:
         - containerPort: 80
+
 Service--Blue
 apiVersion: v1
 kind: Service
@@ -33,6 +34,7 @@ spec:
      port: 80
      targetPort: 80
   type: NodePort
+
 Green.yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -54,6 +56,7 @@ spec:
         image: siddhi2054/cdec-b2:v4
         ports:
         - containerPort: 80
+
 Service--Green
 apiVersion: v1
 kind: Service
@@ -67,6 +70,7 @@ spec:
      port: 80
      targetPort: 80
   type: NodePort
+
 kubectl apply -f blue.yaml
 kubectl get pods
 kubectl apply -f service.yaml
